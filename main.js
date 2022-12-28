@@ -22,7 +22,7 @@ function playerChoice (){
 }
 
 function computerChoice(){
-    return choices[Math.floor(Math.random()*3)]
+    return choices[Math.floor(Math.random()*3)];
 }
 
 function validateInput(choice){
@@ -51,11 +51,9 @@ function playRound(){
 }
 function game() {
     for(let i = 0; i <= 5; i++){
-        playerChoice();
-        computerChoice();
         if (i == 5) {
             if (playerScore > computerScore) {
-            consolelog("Yay! You beat the computer!");
+            console.log("Yay! You beat the computer!");
             } else if (playerScore === computerScore) {
             console.log("It's a tie, no one won!");
             } else {
