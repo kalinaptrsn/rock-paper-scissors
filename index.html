@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"> 
+   </head>
+  <body>
+    <div class="wrapper">
+      <h1>Rock Paper Scissors</h1>
+    </div>    
+  </body>
+  <script src ="main.js"></script>
+</html>
+
+
+  window.getComputerChoice = () => {
+    // Math.random() returns a Number beween 0-1
+    // multiply by 3 for number of options below
+    const choiceNum = Math.random() * 3;
+    let compChoice;
+
+    if (choiceNum <= 1) {
+      compChoice = "rock";
+    } else if (choiceNum <= 2) {
+      compChoice = "paper";
+    } else { // if choiceNum <= 3
+      compChoice = "scissors"
+    }
+
+    return compChoice;
+  };
+
+  function getPlayerChoice(){
+  let playerChoice;
+  return playerChoice;
+    
+  }
+
+  console.log(playerChoice, window.getComputerChoice9());
+  // Example values
+ // console.log('rock', window.getComputerChoice());
+ // console.log('paper', window.getComputerChoice());
+ // console.log('scissors', window.getComputerChoice());
+
+  // console.log(window.getComputerChoice('{{ rock || paper || scissors }}'));
+
+  const $submitButton = document.getElementById('submitButton');
+  $submitButton.addEventListener('click', () => window.getComputerChoice(), false);
+
+
+<style>
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
