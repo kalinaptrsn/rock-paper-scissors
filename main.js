@@ -2,24 +2,34 @@ const choices = ['rock','paper','scissors']
 let playerScore = 0;
 let computerScore = 0;
 
-function getPlayerChoice (){
-    let input = prompt('Choose rock, paper, or scissors');
-    while (input == null){  
-        input = prompt('Choose rock, paper, or scissors');
-    }
-    input = input.toLowerCase();
-    let check = validateInput(input);
-    while (check == false){
-        input = prompt('Please choose rock, paper, or scissors');
-    while (input == null) {
-        input = prompt('Choose rock, paper, or scissors');
-    }
-             
-         input = input.toLowerCase();
-         check = validateInput(input);
-    }
-    return input;
-}
+const buttons = document.querySelectorAll('.js-button')
+
+buttons.forEach((button) => {
+    button.addEventListener('click',(e) => {
+        getPlayerChoice(e);
+    });
+});
+
+function getPlayerChoice (event){
+    console.log(event);
+    const input = event.target.value;
+    // let input = prompt('Choose rock, paper, or scissors');
+    //while (input == null){  
+    //    input = prompt('Choose rock, paper, or scissors');
+    //}
+    //input = input.toLowerCase();
+    //let check = validateInput(input);
+    // while (check == false){
+    //     input = prompt('Please choose rock, paper, or scissors');
+    // while (input == null) {
+    //     input = prompt('Choose rock, paper, or scissors');
+    // }
+    
+    //     input = input.toLowerCase();
+    //     check = validateInput(input);
+    //}
+    playRound(input, computerChoice);
+}        
 
 function computerChoice(){
     return choices[Math.floor(Math.random()*3)];
@@ -29,8 +39,7 @@ function validateInput(choice){
     return choices.includes(choice);
 }
 
-function playRound(){
-    const playerSelection = getPlayerChoice();
+function playRound(playerSelection){
     const computerSelection = computerChoice();
     console.log(playerSelection);
     console.log(computerSelection);
@@ -51,25 +60,25 @@ function playRound(){
     }
 }
 
-function init() {
-    for(let i = 0; i <= 5; i++){
-        if (i == 5) {
-            if (playerScore > computerScore) {
-            console.log('Yay! You beat the computer!');
-            } else if (playerScore === computerScore) {
-            console.log("It's a tie, no one won!");
-            } else {
-            console.log('Haha, the computer beat you!');
-            }
-            console.log('Player Score = ' + playerScore);
-            console.log('Computer Score = ' + computerScore);
+//function init() {
+//    for(let i = 0; i <= 5; i++){
+//        if (i == 5) {
+//          if (playerScore > computerScore) {
+//          console.log('Yay! You beat the computer!');
+//            } else if (playerScore === computerScore) {
+//            console.log("It's a tie, no one won!");
+//           } else {
+//            console.log('Haha, the computer beat you!');
+//            }
+//            console.log('Player Score = ' + playerScore);
+//            console.log('Computer Score = ' + computerScore);
        
-            } else {
-            playRound(getPlayerChoice, computerChoice);
-            }
-    }
-}
- init();
+//            } else {
+//            playRound(getPlayerChoice, computerChoice);
+//            }
+//    }
+//}
+//init();
 
 
 
