@@ -6,11 +6,18 @@
   <body>
     <div class="wrapper">
       <h1>Rock Paper Scissors</h1>
-    </div>    
+    </div>
+    
+    <div class="buttons">
+      <button id="rockBtn" class="js-button" value="rock">Rock</button>
+      <button id="paperBtn" class="js-button" value="paper">Paper</button>
+      <button id="scissorsBtn" class="js-button" value="scissors">Scissors</button>
+    </div>
 
-    <button id="rockBtn" class="js-button" value="rock">Rock</button>
-    <button id="paperBtn" class="js-button" value="paper">Paper</button>
-    <button id="scissorsBtn" class="js-button" value="scissors">Scissors</button>
+    <div class="roundInfo"></div>
+    <div class="roundResults"></div>
+    <div class="gameInfo"></div>
+    <div class="gameOver"></div>
 
   </body>
   <script src ="main.js"></script>
@@ -19,9 +26,26 @@
 <style>
   .wrapper {
     display: flex;
-    align-items: center;
+    text-align: center;
     justify-content: center;
-    height: 100vh;
+    height: 10vh;
     width: 100vw;
   }
+
+  .roundInfo, .roundResults, .gameInfo, .gameOver {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+  }
+
 </style>
